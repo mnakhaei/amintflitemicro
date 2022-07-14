@@ -32,6 +32,9 @@ tensorflow/lite/micro/examples/person_detection/detection_responder.cc \
 tensorflow/lite/micro/examples/person_detection/image_provider.cc \
 tensorflow/lite/micro/examples/person_detection/main.cc \
 tensorflow/lite/micro/examples/person_detection/main_functions.cc \
+tensorflow/lite/micro/My/kernel/bconv2d.cc \
+tensorflow/lite/micro/My/kernel/bmaxpool.cc \
+tensorflow/lite/micro/My/kernel/quantization.cc \
 $(person_detection_MODEL_SRCS)
 
 person_detection_HDRS := \

@@ -34,6 +34,8 @@ limitations under the License.
 #include "tensorflow/lite/micro/micro_op_resolver.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 
+#include "tensorflow/lite/micro/My/kernel/lce_ops_register.h"
+
 namespace tflite {
 TfLiteRegistration* Register_DETECTION_POSTPROCESS();
 
@@ -573,6 +575,11 @@ class MicroMutableOpResolver : public MicroOpResolver {
   TfLiteStatus AddZerosLike() {
     return AddBuiltin(BuiltinOperator_ZEROS_LIKE, Register_ZEROS_LIKE(),
                       ParseZerosLike);
+  }
+
+  TfLiteStatus AddBConv2D() {
+    return AddBuiltin(MyOperator_BConv, *::compute_engine::tflite::Register_BCONV_2D(),
+                     ParseBConv);
   }
 
   unsigned int GetRegistrationLength() { return registrations_len_; }

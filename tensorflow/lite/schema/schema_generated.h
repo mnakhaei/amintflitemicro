@@ -881,10 +881,11 @@ enum BuiltinOperator {
   BuiltinOperator_RELU_0_TO_1 = 152,
   BuiltinOperator_UNSORTED_SEGMENT_PROD = 153,
   BuiltinOperator_MIN = BuiltinOperator_ADD,
-  BuiltinOperator_MAX = BuiltinOperator_UNSORTED_SEGMENT_PROD
+  BuiltinOperator_MAX = BuiltinOperator_UNSORTED_SEGMENT_PROD,
+  MyOperator_BConv = 154
 };
 
-inline const BuiltinOperator (&EnumValuesBuiltinOperator())[154] {
+inline const BuiltinOperator (&EnumValuesBuiltinOperator())[155] {
   static const BuiltinOperator values[] = {
     BuiltinOperator_ADD,
     BuiltinOperator_AVERAGE_POOL_2D,
@@ -1039,7 +1040,8 @@ inline const BuiltinOperator (&EnumValuesBuiltinOperator())[154] {
     BuiltinOperator_GELU,
     BuiltinOperator_DYNAMIC_UPDATE_SLICE,
     BuiltinOperator_RELU_0_TO_1,
-    BuiltinOperator_UNSORTED_SEGMENT_PROD
+    BuiltinOperator_UNSORTED_SEGMENT_PROD,
+    MyOperator_BConv,
   };
   return values;
 }

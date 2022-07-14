@@ -536,6 +536,11 @@ TfLiteStatus ParseOpDataTfLite(const Operator* op, BuiltinOperator op_type,
     case BuiltinOperator_CAST: {
       return ParseCast(op, error_reporter, allocator, builtin_data);
     }
+
+     case MyOperator_BConv: {
+      return ParseCast(op, error_reporter, allocator, builtin_data);
+    }
+    
     case BuiltinOperator_LSH_PROJECTION: {
       auto params = safe_allocator.Allocate<TfLiteLSHProjectionParams>();
       TF_LITE_ENSURE(error_reporter, params != nullptr);
